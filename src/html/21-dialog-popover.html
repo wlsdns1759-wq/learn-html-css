@@ -42,10 +42,18 @@
 
       // ===== 함수 구현 =====
       const openDialog = () => {
-        panelDialog.setAttribute('open', '');
+        if (typeof panelDialog.showModal === 'function') {
+          panelDialog.showModal();
+        } else {
+          panelDialog.setAttribute('open', ''); // fallback
+        }
       };
       const closeDialog = () => {
-        panelDialog.removeAttribute('open');
+        if (typeof panelDialog.close === 'function') {
+          panelDialog.close();
+        } else {
+          panelDialog.removeAttribute('open'); // fallback
+        }
       };
 
       // ===== 이벤트 바인딩 =====
