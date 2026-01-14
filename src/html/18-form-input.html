@@ -14,29 +14,36 @@
     <div class="go-index"><a href="/index.html">Index로 이동</a></div>
     <h1>폼(input) 요소</h1>
     <!-- form 요소 안에 submit 버튼이 있는 경우 -->
+    <!-- type 속성의 값을 email로 지정하면 입력 값은 이메일 형식을 유지해야 함. -->
     <form action="/" method="post" id="likelion">
-      <input type="email" name="" id="" />
+      <input type="email" name="userEmail" id="userEmail" />
       <button type="submit">전송</button>
     </form>
 
     <!-- form 요소 밖에 submit 버튼이 있는 경우 (id, form 속성으로 연결) -->
     <!-- HTML5에 새롭게 추가된 사용 방식 -->
-    <form action="/" method="post" id="bootcamp">
-      <input type="email" name="" id="" />
-      <button type="submit" form="bootcamp">전송</button>
-    </form>
+    <!-- type 속성의 값을 url로 지정하면 입력 값은 이메일 형식을 유지해야 함. -->
+    <form action="/" method="post" id="bootcamp"></form>
+    <input type="url" form="bootcamp" name="userSNS" id="userSNS" />
+    <button type="submit" form="bootcamp">전송</button>
     <hr />
     <!-- fieldset과 legend 요소로 연관성 있는 폼 서식을 그룹화 시킬 경우 -->
+    <!-- label 요소를 사용하여 입력 서식에 접근 가능한 이름 부여하기 -->
+    <!-- 모든 폼 서식은 1대 1로 대응되는 접근 가능한 이름을 가져야 함. -->
     <form action="/">
       <fieldset>
         <legend>고객 정보</legend>
+        <!-- 명시적인 레이블링 -->
         <div>
-          <label for="name">이름</label>
-          <input type="text" id="name" />
+          <label for="userName">성명</label>
+          <input type="text" name="userName" id="userName" />
         </div>
+        <!-- 암묵적인 레이블링 -->
         <div>
-          <label for="password">암호</label>
-          <input type="password" id="password" />
+          <label>
+            암호
+            <input type="password" />
+          </label>
         </div>
       </fieldset>
     </form>
