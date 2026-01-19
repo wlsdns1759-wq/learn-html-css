@@ -4,8 +4,22 @@ body {
 }
 
 /* 글자 크기 */
+.unit {
+  font-size: 0.625rem;
+}
+
 .like {
+  background-color: #ffc;
+  /* px 단위 */
   font-size: 20px;
+  /* rem 단위 */
+  font-size: 2rem;
+  /* em 단위 */
+  font-size: 2.5em;
+  /* vw 단위 */
+  font-size: 5vw;
+  /* vw 단위 & clamp() */
+  font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 /* 글자 굵기 */
