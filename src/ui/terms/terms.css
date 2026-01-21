@@ -6,6 +6,7 @@
   --figure-size: calc(var(--image-size) + var(--image-gap));
 
   line-height: 1.5;
+  display: flow-root;
 
   b {
     font-weight: 700;
@@ -29,18 +30,6 @@
   p {
     font-size: 0.875em;
   }
-
-  &:nth-of-type(even) {
-    b {
-      float: left;
-    }
-
-    figure {
-      float: right;
-      margin-right: 0;
-      margin-left: var(--image-gap);
-    }
-  }
 }
 
 /* 레이아웃 */
@@ -62,5 +51,17 @@
 
   .term {
     margin-top: 12px;
+  }
+
+  .cross {
+    b {
+      float: left;
+    }
+
+    figure {
+      float: right;
+      margin-right: 0;
+      margin-left: var(--image-gap);
+    }
   }
 }
