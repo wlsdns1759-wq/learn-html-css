@@ -47,7 +47,7 @@
   --avatar-margin: 10px;
   --container-inline-padding: 30px;
   --container-block-padding: 10px;
-  --count: 2;
+  --count: 1;
 
   /* 1개 아바타가 차지하는 공간 = 아바타 크기 + 좌우 마진 */
   --avarta-width: calc(var(--avatar-size) + (var(--avatar-margin) * 2));
@@ -65,5 +65,18 @@
 
     float: left;
     margin: var(--avatar-margin);
+  }
+}
+
+/* @media 규칙 */
+@media (width >= 400px) {
+  .avatars {
+    --count: 2;
+  }
+}
+
+@media (width >= 800px) {
+  .avatars {
+    --count: 4;
   }
 }
