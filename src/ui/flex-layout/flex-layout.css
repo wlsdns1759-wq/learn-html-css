@@ -63,3 +63,33 @@ body {
     }
   }
 }
+
+@media (width >= 1025px) {
+  .container {
+    display: flex;
+    flex-flow: wrap row;
+    align-content: start;
+  }
+
+  .header,
+  .navigation,
+  .footer {
+    inline-size: 100%;
+  }
+
+  .main {
+    display: contents;
+    flex: initial;
+
+    .euid,
+    .likelion {
+      inline-size: 30%;
+      block-size: calc(100% - 150px);
+    }
+  }
+
+  .sidebar {
+    inline-size: 40%;
+    block-size: auto;
+  }
+}
