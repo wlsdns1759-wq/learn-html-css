@@ -1,4 +1,4 @@
-/* 플렉스 속성 */
+/* 플렉스 컨테이너 관련 속성 */
 .like {
   background: var(--yellow);
   /* 플렉스 컨테이너 */
@@ -102,5 +102,36 @@
     background: var(--pink);
     inline-size: 400px;
     margin-inline: auto;
+  }
+}
+
+/* 플렉스 아이템 관련 속성 */
+.bootcamp {
+  background: var(--yellow);
+  inline-size: 50%;
+  block-size: 50px;
+  display: flex;
+  flex-flow: nowrap row;
+  column-gap: 20px;
+  box-shadow: 0 0 0 1px red;
+
+  > div {
+    background: var(--pink);
+    align-content: center;
+    inline-size: 100px;
+    flex-basis: auto;
+    flex-basis: 0;
+
+    &:nth-child(odd) {
+      background: var(--mint);
+      order: -1;
+      flex-grow: 1;
+    }
+
+    &:nth-child(even) {
+      background: var(--lavender);
+      order: 1;
+      flex-grow: 2;
+    }
   }
 }
