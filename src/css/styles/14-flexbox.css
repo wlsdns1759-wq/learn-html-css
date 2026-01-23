@@ -108,7 +108,7 @@
 /* 플렉스 아이템 관련 속성 */
 .bootcamp {
   background: var(--yellow);
-  inline-size: 50%;
+  inline-size: 500px;
   block-size: 50px;
   display: flex;
   flex-flow: nowrap row;
@@ -121,17 +121,38 @@
     inline-size: 100px;
     flex-basis: auto;
     flex-basis: 0;
+    flex-basis: 100px;
 
     &:nth-child(odd) {
       background: var(--mint);
       order: -1;
       flex-grow: 1;
+      flex-grow: 0;
+      flex-shrink: 2;
     }
 
     &:nth-child(even) {
       background: var(--lavender);
       order: 1;
       flex-grow: 2;
+      flex-grow: 0;
+      flex-shrink: 1;
     }
+  }
+
+  /* flex 속성은 flex-grow, flex-shrink, flex-basis 단축 속성 */
+  .bootcamp-item1 {
+    /* flex-grow: 0, flex-shrink: 0; flex-basis: auto */
+    flex: none !important;
+  }
+
+  .bootcamp-item2 {
+    /* flex-grow: 1, flex-shrink: ; flex-basis: 0 */
+    flex: 1 !important;
+  }
+
+  .bootcamp-item3 {
+    /* flex-grow: 0, flex-shrink: 1; flex-basis: 0 */
+    flex: 0 !important;
   }
 }
