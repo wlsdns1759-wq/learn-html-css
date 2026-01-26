@@ -61,6 +61,22 @@
 }
 
 /* 레이아웃 */
+/* flex (column) 일 경우 - 1단 */
+/* .notifications {
+  box-shadow: 0 0 0 2px red;
+  display: flex;
+  flex-flow: nowrap column;
+  row-gap: 16px;
+} */
+
+/* flex (row) 일 경우 - 1단 */
 .notifications {
   box-shadow: 0 0 0 2px red;
+  display: flex;
+  flex-flow: wrap row;
+  row-gap: 16px;
+
+  .notification {
+    inline-size: 100%;
+  }
 }
