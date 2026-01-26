@@ -59,3 +59,8 @@
     inset: 0 0 auto auto;
   }
 }
+
+/* 레이아웃 */
+.notifications {
+  box-shadow: 0 0 0 2px red;
+}
