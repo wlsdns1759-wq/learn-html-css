@@ -1,0 +1,17 @@
+/* Youtube 영상 */
+.youtube {
+  box-shadow: 0 0 0 5px red;
+
+  .iframe-wrapper {
+    position: relative;
+    width: auto;
+    padding-block-start: 56.25%;
+  }
+
+  iframe {
+    inline-size: 100%;
+    block-size: 100%;
+    position: absolute;
+    inset: 0 auto auto 0;
+  }
+}
