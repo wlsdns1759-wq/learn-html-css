@@ -82,3 +82,75 @@
     }
   }
 }
+
+/* 뉴스 */
+.news {
+  background: var(--blue-200);
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  row-gap: 15px;
+
+  .news-headline {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .news-list {
+    font-size: 14px;
+    order: 1;
+    inline-size: 100%;
+  }
+
+  .news-item {
+    display: flex;
+    flex-flow: nowrap row;
+    column-gap: 10px;
+
+    &:nth-child(n + 2) {
+      margin-block-start: 4px;
+    }
+
+    a {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    time {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+    }
+  }
+
+  .news-more {
+    display: block;
+    inline-size: 16px;
+    block-size: 16px;
+  }
+}
+
+/* 레이아웃 */
+.ediya-content {
+  @media (width>=1024px) {
+    background: var(--blue-200);
+    inline-size: 80%;
+    margin-inline: auto;
+    display: flex;
+    flex-flow: nowrap row;
+
+    .youtube {
+      flex: 1;
+    }
+
+    .notice-news-wrapper {
+      flex: 1;
+    }
+  }
+}
