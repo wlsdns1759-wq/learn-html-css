@@ -1,0 +1,208 @@
+/* 그리드 셀 배경 색상 */
+.like,
+.lion,
+.euid,
+.bootcamp,
+.frontend,
+.school {
+  > div:nth-child(1) {
+    background: var(--pink);
+  }
+  > div:nth-child(2) {
+    background: var(--blue);
+  }
+  > div:nth-child(3) {
+    background: var(--coral);
+  }
+  > div:nth-child(4) {
+    background: var(--green);
+  }
+  > div:nth-child(5) {
+    background: var(--purple);
+  }
+  > div:nth-child(6) {
+    background: var(--gray);
+  }
+  > div:nth-child(7) {
+    background: var(--apricot);
+  }
+}
+
+/* 그리드 컨테이너 설정 */
+/* 그리드 템플릿 설정 (열과 행) */
+/* 정렬 - justify-content / align-content */
+/* dense를 활용하여 밀집 배치 */
+.like {
+  inline-size: 300px;
+  block-size: 300px;
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-template-rows: auto auto auto auto auto;
+  align-content: stretch;
+  justify-content: space-between;
+  /* justify-content 와 align-content를 함께 지정할 때 place-content */
+  place-content: stretch space-between;
+  grid-auto-flow: dense;
+
+  > div:nth-child(odd),
+  .like2 {
+    grid-column: span 2;
+  }
+}
+
+/* 정렬 - justify-items / align-items */
+/* 정렬 - justify-self / align-self */
+.school {
+  inline-size: 300px;
+  block-size: 300px;
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-template-rows: auto auto auto auto auto;
+  align-items: center;
+  justify-items: center;
+  /* justify-items / align-items를 함께 지정할 때 place-items */
+  place-items: center;
+
+  .school6 {
+    place-self: start end;
+  }
+
+  .school7 {
+    align-self: end;
+    justify-self: end;
+  }
+}
+
+/* 그리드 아이템 배치 - 라인 기반 */
+/* 다양한 단위를 사용하여 트랙 설정 */
+.lion {
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: 50px 10rem 20% 1fr;
+  grid-template-rows: 50px 50px 50px 50px;
+
+  /* .lion1 {
+    grid-row-start: 4;
+    grid-column-start: 4;
+    grid-row-end: 5;
+    grid-column-end: 5;
+
+    grid-row: 4/5;
+    grid-column: 4/5;
+
+    grid-area: 4/4/5/5;
+  } */
+
+  /* .lion2 {
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-row-end: 6;
+    grid-column-end: 3;
+  } */
+
+  /* span 키워드 활용 */
+  .lion1 {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 3;
+  }
+
+  .lion2 {
+    grid-row-start: 4;
+    grid-column-start: 4;
+  }
+
+  .lion3 {
+    grid-row-start: 1;
+    grid-column-start: 4;
+  }
+
+  .lion4 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+  }
+
+  .lion5 {
+    grid-row: 3 / span 2;
+    grid-column: 2 / span 2;
+  }
+
+  .lion6 {
+    grid-row: 2 / span 2;
+    grid-column-start: 4;
+  }
+
+  .lion7 {
+    grid-row-start: 4;
+    grid-column-start: 1;
+  }
+}
+
+/* repeat() 함수 활용 */
+/* 이름 기반 배치 */
+/* 갭 지정 */
+.euid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 50px);
+  grid-template-areas:
+    'header header header header'
+    'nav nav nav side'
+    'main main main side'
+    'footer footer footer footer';
+  row-gap: 10px;
+  column-gap: 15px;
+  gap: 10px 15px;
+
+  .header {
+    grid-area: header;
+  }
+
+  .navigation {
+    grid-area: nav;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .sidebar {
+    grid-area: side;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+}
+
+/* 라인에 이름을 지정하고 배치 */
+.bootcamp {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(10, 1fr) [content-end] 1fr [full-end];
+  grid-template-rows: repeat(5, 50px);
+
+  .bootcamp1 {
+    grid-column-start: full-start;
+    grid-column-end: full-end;
+    grid-column: full;
+  }
+
+  .bootcamp2 {
+    grid-column: content;
+  }
+
+  .bootcamp3 {
+    grid-column: full-start / content-end;
+  }
+
+  .bootcamp4 {
+    grid-column: content-start / full-end;
+  }
+}
+
+/* auto-fill / auto-fit */
+.frontend {
+  box-shadow: 0 0 0 2px red;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 50px;
+}
