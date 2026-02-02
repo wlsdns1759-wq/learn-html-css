@@ -1,0 +1,55 @@
+.post {
+  background: var(--yellow);
+  padding: 20px;
+  inline-size: 300px;
+  container-type: inline-size;
+  container-name: post;
+
+  .bootcamp {
+    container: bootcamp / inline-size;
+    background: var(--pink);
+  }
+
+  .card {
+    display: grid;
+    gap: 20px;
+
+    h3 {
+      color: green;
+    }
+
+    .link-wrapper {
+      display: flex;
+      flex-flow: nowrap column;
+      gap: 10px;
+      a {
+        background: var(--dark-blue);
+        color: var(--white);
+        padding: 10px 15px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  @container bootcamp (width >= 400px) {
+    .card {
+      h3 {
+        color: red;
+      }
+
+      .link-wrapper {
+        flex-direction: row;
+        order: -1;
+      }
+    }
+  }
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr) minmax(500px, 1fr));
+
+  .post {
+    inline-size: auto;
+  }
+}
